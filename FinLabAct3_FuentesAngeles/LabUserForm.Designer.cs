@@ -70,7 +70,7 @@
             // 
             // logoutToolStripMenuItem
             // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem"; 
             this.logoutToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);

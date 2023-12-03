@@ -71,11 +71,6 @@
     <Compile Include="LabAdminForm.Designer.cs">
       <DependentUpon>LabAdminForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="LaboratoryDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="LabUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -121,17 +116,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="LaboratoryDBDataSet.xsc">
-      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LaboratoryDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LaboratoryDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LaboratoryDBDataSet.xss">
-      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
