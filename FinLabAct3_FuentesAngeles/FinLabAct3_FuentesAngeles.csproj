@@ -59,11 +59,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminAccountsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminAccountsForm.Designer.cs">
+      <DependentUpon>AdminAccountsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LabAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LabAdminForm.Designer.cs">
       <DependentUpon>LabAdminForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LaboratoryDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="LabUserForm.cs">
       <SubType>Form</SubType>
@@ -85,6 +96,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminAccountsForm.resx">
+      <DependentUpon>AdminAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LabAdminForm.resx">
       <DependentUpon>LabAdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -107,6 +121,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="LaboratoryDBDataSet.xsc">
+      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDBDataSet.xss">
+      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

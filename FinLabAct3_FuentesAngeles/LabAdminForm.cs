@@ -16,5 +16,11 @@ namespace FinLabAct3_FuentesAngeles
         {
             InitializeComponent();
         }
+
+        private void accountsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminAccountsForm accForm = new AdminAccountsForm();
+            accForm.ShowDialog();
+        }
     }
 }

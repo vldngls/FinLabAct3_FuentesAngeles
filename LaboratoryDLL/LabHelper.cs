@@ -10,7 +10,7 @@ namespace LaboratoryDLL
 {
     public class LabHelper
     {
-        private string connectionString = @"Data Source=(LocalDB)\v11.0;AttachDbFilename=D:\FinLabAct3_FuentesAngeles\FinLabAct3_FuentesAngeles\LaboratoryDB.mdf;Integrated Security=True";
+        private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=D:\FinLabAct3_FuentesAngeles\FinLabAct3_FuentesAngeles\LaboratoryDB.mdf;Integrated Security=True;Connect Timeout=30;Encrypt=false";
 
         public DataTable ValidateUser(string username, string password)
         {
