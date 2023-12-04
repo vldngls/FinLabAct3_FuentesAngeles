@@ -20,7 +20,7 @@ namespace FinLabAct3_FuentesAngeles
             string userPassword = loggedPassword;
             LabHelper labHelper = new LabHelper();
 
-            DataTable userInfo = labHelper.ValidateUser(loggedID, loggedPassword);
+            DataTable userInfo = labHelper.GetUserInfo(loggedID);
 
             lblUserID.Text = userInfo.Rows[0]["UserID"].ToString();
             lblFirstName.Text = userInfo.Rows[0]["FirstName"].ToString();

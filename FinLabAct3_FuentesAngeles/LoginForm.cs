@@ -16,53 +16,43 @@ namespace FinLabAct3_FuentesAngeles
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = textBox1.Text;
+            string userID = txtUsername.Text.Trim();
+            string userPassword = txtPassword.Text.Trim();
 
             LabHelper dbHelper = new LabHelper();
-            DataTable result = dbHelper.ValidateUser(username, password);
 
-            // Check if the returned data table is not null
-            if (result != null && result.Rows.Count > 0)
+            var result = dbHelper.AuthenticateUser(userID, userPassword);
+
+            string userType = result.Item1;
+            string firstName = result.Item2;
+
+            if (userType == "User")
             {
-                string storedPassword = result.Rows[0]["UserPassword"].ToString();
+                //User login
+                DataTable userInfoTable = dbHelper.GetUserInfo(userID);
+                loggedID = userID;
+                loggedFullname = $"{userInfoTable.Rows[0]["FirstName"]} {userInfoTable.Rows[0]["LastName"]}";
+                loggedPassword = userPassword;
 
-                if (password == storedPassword)
-                {
-                    string userType = result.Rows[0]["UserID"].ToString().ToLower();
-                    if (userType == "administratordb")
-                    {
-                        MessageBox.Show("Welcome, Administrator.");
-                        LabAdminForm adminForm = new LabAdminForm();
-                        adminForm.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        LabUserForm userForm = new LabUserForm();
-
-                        string firstName = result.Rows[0]["FirstName"].ToString();
-                        string lastName = result.Rows[0]["LastName"].ToString();
-
-                        loggedID = result.Rows[0]["UserID"].ToString();
-                        loggedPassword = password;
-                        loggedFullname = firstName + " " + lastName;
-
-                        MessageBox.Show("Welcome, " + firstName + " " + lastName + ".");
-
-                        userForm.Show();
-                        this.Hide();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Incorrect password.");
-                }
+                LabUserForm userForm = new LabUserForm();
+                userForm.Show();
+                this.Hide();    
+                MessageBox.Show($"Login successful as {firstName}!");
+            }
+            else if (userType == "Admin")
+            {
+                // Admin login
+                LabAdminForm adminForm = new LabAdminForm();
+                adminForm.Show();
+                this.Hide();
+                MessageBox.Show("Login successful as an admin!");
             }
             else
             {
-                MessageBox.Show("User does not exist or an error occurred while attempting to validate the user.");
+                // Invalid login
+                MessageBox.Show("Invalid login credentials. Please try again.");
             }
         }
+
     }
 }
