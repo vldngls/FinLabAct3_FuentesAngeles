@@ -50,6 +50,29 @@ namespace LaboratoryDLL
             }
         }
 
+        public void InsertUser(string userID, string firstName, string lastName, string gender, string course, string userPassword, string userType)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("InsertUser", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    // Add parameters
+                    command.Parameters.AddWithValue("@UserID", userID);
+                    command.Parameters.AddWithValue("@FirstName", firstName);
+                    command.Parameters.AddWithValue("@LastName", lastName);
+                    command.Parameters.AddWithValue("@Gender", gender);
+                    command.Parameters.AddWithValue("@Course", course);
+                    command.Parameters.AddWithValue("@UserPassword", userPassword);
+                    command.Parameters.AddWithValue("@UserType", userType);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public DataTable GetUserInfo(string userID)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
