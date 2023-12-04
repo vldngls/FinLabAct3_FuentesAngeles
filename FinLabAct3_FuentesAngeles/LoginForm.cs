@@ -16,43 +16,39 @@ namespace FinLabAct3_FuentesAngeles
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string userID = txtUsername.Text.Trim();
-            string userPassword = txtPassword.Text.Trim();
-
             LabHelper dbHelper = new LabHelper();
+            string userID = txtUsername.Text.Trim();
+            string password = txtPassword.Text.Trim();
 
-            var result = dbHelper.AuthenticateUser(userID, userPassword);
+            string userType = dbHelper.AuthenticateUser(userID, password);
 
-            string userType = result.Item1;
-            string firstName = result.Item2;
-
-            if (userType == "User")
+            if (!string.IsNullOrEmpty(userType))
             {
-                //User login
-                DataTable userInfoTable = dbHelper.GetUserInfo(userID);
-                loggedID = userID;
-                loggedFullname = $"{userInfoTable.Rows[0]["FirstName"]} {userInfoTable.Rows[0]["LastName"]}";
-                loggedPassword = userPassword;
-
-                LabUserForm userForm = new LabUserForm();
-                userForm.Show();
-                this.Hide();    
-                MessageBox.Show($"Login successful as {firstName}!");
-            }
-            else if (userType == "Admin")
-            {
-                // Admin login
-                LabAdminForm adminForm = new LabAdminForm();
-                adminForm.Show();
-                this.Hide();
-                MessageBox.Show("Login successful as an admin!");
+                // Authentication successful
+                if (userType == "Admin")
+                {
+                    // Redirect to Admin page
+                    LabAdminForm adminForm = new LabAdminForm();
+                    adminForm.Show();
+                    this.Hide();
+                    MessageBox.Show("Logged in as Admin");
+                    // Add your redirection code here
+                }
+                else if (userType == "User")
+                {
+                    // Redirect to User page
+                    LabUserForm userForm = new LabUserForm();
+                    userForm.Show();
+                    this.Hide();
+                    MessageBox.Show("Logged in as User");
+                    // Add your redirection code here
+                }
             }
             else
             {
-                // Invalid login
-                MessageBox.Show("Invalid login credentials. Please try again.");
+                // Authentication failed
+                MessageBox.Show("Invalid credentials. Please try again.");
             }
         }
-
     }
 }
