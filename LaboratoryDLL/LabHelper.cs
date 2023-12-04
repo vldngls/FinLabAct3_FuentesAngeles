@@ -28,7 +28,8 @@ namespace LaboratoryDLL
                 }
             }
         }
-        public string AuthenticateUser(string userID, string password)
+
+        public Tuple<string, string> AuthenticateUser(string userID, string userPassword)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -38,13 +39,23 @@ namespace LaboratoryDLL
                 {
                     cmd.CommandType = CommandType.StoredProcedure;
 
-                    cmd.Parameters.Add("@UserID", SqlDbType.NVarChar).Value = userID;
-                    cmd.Parameters.Add("@UserPassword", SqlDbType.NVarChar).Value = password;
-                    cmd.Parameters.Add("@UserType", SqlDbType.NVarChar, 50).Direction = ParameterDirection.Output;
+                    cmd.Parameters.AddWithValue("@UserID", userID);
+                    cmd.Parameters.AddWithValue("@UserPassword", userPassword);
 
-                    cmd.ExecuteNonQuery();
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string userType = reader["UserType"].ToString();
+                            string firstName = reader["FirstName"] is DBNull ? null : reader["FirstName"].ToString();
 
-                    return cmd.Parameters["@UserType"].Value.ToString();
+                            return new Tuple<string, string>(userType, firstName);
+                        }
+                        else
+                        {
+                            return new Tuple<string, string>("Invalid", null);
+                        }
+                    }
                 }
             }
         }
