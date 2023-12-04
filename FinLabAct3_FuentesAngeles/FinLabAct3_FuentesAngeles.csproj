@@ -121,6 +121,12 @@
     <Compile Include="RegisterAsUser.Designer.cs">
       <DependentUpon>RegisterAsUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserTransaction.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserTransaction.Designer.cs">
+      <DependentUpon>UserTransaction.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddAndEdit.resx">
       <DependentUpon>AddAndEdit.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="RegisterAsUser.resx">
       <DependentUpon>RegisterAsUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserTransaction.resx">
+      <DependentUpon>UserTransaction.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

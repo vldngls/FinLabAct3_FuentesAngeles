@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace FinLabAct3_FuentesAngeles
 {
-    public partial class PasswordRecovery : Form
+    public partial class UserTransaction : Form
     {
-        public PasswordRecovery()
+        public UserTransaction()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }
