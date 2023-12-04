@@ -23,17 +23,5 @@ namespace FinLabAct3_FuentesAngeles
             infoForm.MdiParent = this;
             infoForm.Show();
         }
-
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            LoginForm loginForm = new LoginForm();
-            loginForm.Show();
-            this.Close();
-        }
-
-        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
     }
 }

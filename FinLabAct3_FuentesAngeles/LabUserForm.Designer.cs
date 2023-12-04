@@ -35,8 +35,8 @@
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.equipmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,23 +64,21 @@
             // userInformationToolStripMenuItem
             // 
             this.userInformationToolStripMenuItem.Name = "userInformationToolStripMenuItem";
-            this.userInformationToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.userInformationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.userInformationToolStripMenuItem.Text = "User Information";
             this.userInformationToolStripMenuItem.Click += new System.EventHandler(this.userInformationToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
-            this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(163, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // equipmentToolStripMenuItem
             // 
@@ -91,17 +89,17 @@
             this.equipmentToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.equipmentToolStripMenuItem.Text = "Equipment";
             // 
-            // viewTransactionToolStripMenuItem
-            // 
-            this.viewTransactionToolStripMenuItem.Name = "viewTransactionToolStripMenuItem";
-            this.viewTransactionToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.viewTransactionToolStripMenuItem.Text = "View Transactions";
-            // 
             // newTransactionToolStripMenuItem
             // 
             this.newTransactionToolStripMenuItem.Name = "newTransactionToolStripMenuItem";
-            this.newTransactionToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
+            this.newTransactionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newTransactionToolStripMenuItem.Text = "New Transaction";
+            // 
+            // viewTransactionToolStripMenuItem
+            // 
+            this.viewTransactionToolStripMenuItem.Name = "viewTransactionToolStripMenuItem";
+            this.viewTransactionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.viewTransactionToolStripMenuItem.Text = "View Transactions";
             // 
             // LabUserForm
             // 
