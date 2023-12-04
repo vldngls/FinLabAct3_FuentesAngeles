@@ -94,5 +94,48 @@ namespace LaboratoryDLL
                 }
             }
         }
+
+        public DataTable GetMatchingUserNames(string searchKeyword)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("GetMatchingUserNames", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.AddWithValue("@SearchKeyword", searchKeyword);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
+                    {
+                        DataTable dt = new DataTable();
+                        adapter.Fill(dt);
+                        return dt;
+                    }
+                }
+            }
+        }
+
+
+        public void ChangeUserPassword(string userID, string newPassword)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand("ChangeUserPassword", connection))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    // Add parameters
+                    cmd.Parameters.Add("@UserID", SqlDbType.NVarChar, 50).Value = userID;
+                    cmd.Parameters.Add("@NewPassword", SqlDbType.NVarChar, 50).Value = newPassword;
+
+                    // Execute the stored procedure
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

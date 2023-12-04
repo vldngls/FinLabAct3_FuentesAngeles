@@ -69,34 +69,35 @@
             // accountsToolStripMenuItem
             // 
             this.accountsToolStripMenuItem.Name = "accountsToolStripMenuItem";
-            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.accountsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.accountsToolStripMenuItem.Text = "Accounts";
             this.accountsToolStripMenuItem.Click += new System.EventHandler(this.accountsToolStripMenuItem_Click);
             // 
             // addUserToolStripMenuItem
             // 
             this.addUserToolStripMenuItem.Name = "addUserToolStripMenuItem";
-            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.addUserToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addUserToolStripMenuItem.Text = "Add New User";
             this.addUserToolStripMenuItem.Click += new System.EventHandler(this.addUserToolStripMenuItem_Click);
             // 
             // passwordRecoveryToolStripMenuItem
             // 
             this.passwordRecoveryToolStripMenuItem.Name = "passwordRecoveryToolStripMenuItem";
-            this.passwordRecoveryToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.passwordRecoveryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.passwordRecoveryToolStripMenuItem.Text = "Password Recovery";
+            this.passwordRecoveryToolStripMenuItem.Click += new System.EventHandler(this.passwordRecoveryToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -113,21 +114,21 @@
             // addEquipmentToolStripMenuItem
             // 
             this.addEquipmentToolStripMenuItem.Name = "addEquipmentToolStripMenuItem";
-            this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.addEquipmentToolStripMenuItem.Text = "Equipments";
             this.addEquipmentToolStripMenuItem.Click += new System.EventHandler(this.addEquipmentToolStripMenuItem_Click);
             // 
             // editEquipmentToolStripMenuItem
             // 
             this.editEquipmentToolStripMenuItem.Name = "editEquipmentToolStripMenuItem";
-            this.editEquipmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editEquipmentToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.editEquipmentToolStripMenuItem.Text = "Transactions";
             this.editEquipmentToolStripMenuItem.Click += new System.EventHandler(this.editEquipmentToolStripMenuItem_Click);
             // 
             // newTransactionToolStripMenuItem
             // 
             this.newTransactionToolStripMenuItem.Name = "newTransactionToolStripMenuItem";
-            this.newTransactionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.newTransactionToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
             this.newTransactionToolStripMenuItem.Text = "New Transaction";
             this.newTransactionToolStripMenuItem.Click += new System.EventHandler(this.newTransactionToolStripMenuItem_Click);
             // 

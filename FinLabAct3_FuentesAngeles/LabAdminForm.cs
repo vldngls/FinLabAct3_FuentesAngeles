@@ -59,5 +59,11 @@ namespace FinLabAct3_FuentesAngeles
             AdminViewTransactions adTransForm = new AdminViewTransactions();
             adTransForm.ShowDialog();
         }
+
+        private void passwordRecoveryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            PasswordRecovery passwordRecoveryForm = new PasswordRecovery();
+            passwordRecoveryForm.ShowDialog();
+        }
     }
 }
