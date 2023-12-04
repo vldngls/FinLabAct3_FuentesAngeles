@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 using LaboratoryDLL;
 
@@ -23,6 +24,16 @@ namespace FinLabAct3_FuentesAngeles
             string password = txtPassword.Text.Trim();
             string userType = dbHelper.AuthenticateUser(userID, password);
 
+            //save public strings
+            DataTable userInfo = dbHelper.GetUserInfo(userID);
+
+            loggedID = userID;
+            loggedPassword = password;
+            string fname = userInfo.Rows[0]["FirstName"].ToString();
+            string lname = userInfo.Rows[0]["LastName"].ToString();
+            loggedFullname = fname + " " + lname;
+
+
             if (!string.IsNullOrEmpty(userType))
             {
                 // Authentication successful
@@ -40,7 +51,7 @@ namespace FinLabAct3_FuentesAngeles
                     LabUserForm userForm = new LabUserForm();
                     userForm.Show();
                     this.Hide();
-                    MessageBox.Show("Logged in as User");
+                    MessageBox.Show("Welcome, Logged in as " + loggedFullname);
                 }
             }
             else
