@@ -16,12 +16,5 @@ namespace FinLabAct3_FuentesAngeles
         {
             InitializeComponent();
         }
-
-        private void AdminAccountsForm_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'laboratoryDBDataSet.UserDB' table. You can move, or remove it, as needed.
-            this.userDBTableAdapter.Fill(this.laboratoryDBDataSet.UserDB);
-
-        }
     }
 }

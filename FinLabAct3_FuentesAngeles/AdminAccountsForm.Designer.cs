@@ -30,9 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.laboratoryDBDataSet = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet();
-            this.userDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userDBTableAdapter = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSetTableAdapters.UserDBTableAdapter();
             this.userIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,8 +37,6 @@
             this.courseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.userPasswordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userDBBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -58,27 +53,12 @@
             this.genderDataGridViewTextBoxColumn,
             this.courseDataGridViewTextBoxColumn,
             this.userPasswordDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.userDBBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(800, 450);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // laboratoryDBDataSet
-            // 
-            this.laboratoryDBDataSet.DataSetName = "LaboratoryDBDataSet";
-            this.laboratoryDBDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // userDBBindingSource
-            // 
-            this.userDBBindingSource.DataMember = "UserDB";
-            this.userDBBindingSource.DataSource = this.laboratoryDBDataSet;
-            // 
-            // userDBTableAdapter
-            // 
-            this.userDBTableAdapter.ClearBeforeFill = true;
             // 
             // userIDDataGridViewTextBoxColumn
             // 
@@ -130,10 +110,7 @@
             this.Controls.Add(this.dataGridView1);
             this.Name = "AdminAccountsForm";
             this.Text = "AdminAccountsForm";
-            this.Load += new System.EventHandler(this.AdminAccountsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userDBBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,9 +118,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private LaboratoryDBDataSet laboratoryDBDataSet;
-        private System.Windows.Forms.BindingSource userDBBindingSource;
-        private LaboratoryDBDataSetTableAdapters.UserDBTableAdapter userDBTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn userIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
