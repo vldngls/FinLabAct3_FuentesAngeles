@@ -59,22 +59,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddAndEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAndEdit.Designer.cs">
+      <DependentUpon>AddAndEdit.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminAccountsForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminAccountsForm.Designer.cs">
       <DependentUpon>AdminAccountsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="BorrowReturnModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BorrowReturnModule.Designer.cs">
+      <DependentUpon>BorrowReturnModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="LabAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="LabAdminForm.Designer.cs">
       <DependentUpon>LabAdminForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="LaboratoryDBDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="LabUserForm.cs">
       <SubType>Form</SubType>
@@ -96,8 +103,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterAsUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegisterAsUser.Designer.cs">
+      <DependentUpon>RegisterAsUser.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddAndEdit.resx">
+      <DependentUpon>AddAndEdit.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminAccountsForm.resx">
       <DependentUpon>AdminAccountsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BorrowReturnModule.resx">
+      <DependentUpon>BorrowReturnModule.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LabAdminForm.resx">
       <DependentUpon>LabAdminForm.cs</DependentUpon>
@@ -121,17 +140,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="LaboratoryDBDataSet.xsc">
-      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LaboratoryDBDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LaboratoryDBDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LaboratoryDBDataSet.xss">
-      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
-    </None>
+    <EmbeddedResource Include="RegisterAsUser.resx">
+      <DependentUpon>RegisterAsUser.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -150,15 +161,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bg.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="LaboratoryDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="LaboratoryDB_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      <DependentUpon>LaboratoryDB.mdf</DependentUpon>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
