@@ -91,6 +91,26 @@
     <Compile Include="LabAdminForm.Designer.cs">
       <DependentUpon>LabAdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LaboratoryDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LaboratoryDBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDBDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LaboratoryDBDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDBDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LaboratoryDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDBDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="LabUserForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -172,6 +192,50 @@
     <EmbeddedResource Include="UserTransaction.resx">
       <DependentUpon>UserTransaction.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="LaboratoryDBDataSet.xsc">
+      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDBDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDBDataSet.xss">
+      <DependentUpon>LaboratoryDBDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet1.xsc">
+      <DependentUpon>LaboratoryDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDBDataSet1.xss">
+      <DependentUpon>LaboratoryDBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet2.xsc">
+      <DependentUpon>LaboratoryDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDBDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDBDataSet2.xss">
+      <DependentUpon>LaboratoryDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet3.xsc">
+      <DependentUpon>LaboratoryDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDBDataSet3.xss">
+      <DependentUpon>LaboratoryDBDataSet3.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
