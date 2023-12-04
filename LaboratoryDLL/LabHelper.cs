@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace LaboratoryDLL
 {
@@ -23,12 +24,25 @@ namespace LaboratoryDLL
                     cmd.CommandType = CommandType.StoredProcedure;
                     cmd.Parameters.AddWithValue("@Username", username);
                     cmd.Parameters.AddWithValue("@Password", password);
+                    cmd.Parameters.Add("@UserExists", SqlDbType.Bit).Direction = ParameterDirection.Output;
 
                     using (SqlDataAdapter adapter = new SqlDataAdapter(cmd))
                     {
                         DataTable dt = new DataTable();
                         adapter.Fill(dt);
-                        return dt;
+
+                        bool userExists = Convert.ToBoolean(cmd.Parameters["@UserExists"].Value);
+
+                        if (userExists)
+                        {
+                            return dt; // User exists, password may or may not be correct
+                        }
+                        else
+                        {
+                            // User does not exist
+                            MessageBox.Show("User does not exist.");
+                            return null; // Return null or an empty DataTable, depending on your design
+                        }
                     }
                 }
             }
