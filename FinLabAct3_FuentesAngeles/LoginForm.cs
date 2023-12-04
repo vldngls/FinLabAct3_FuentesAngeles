@@ -43,7 +43,7 @@ namespace FinLabAct3_FuentesAngeles
                     LabAdminForm adminForm = new LabAdminForm();
                     adminForm.Show();
                     this.Hide();
-                    MessageBox.Show("Logged in as Admin");
+                    MessageBox.Show("Logged in as Administrator");
                 }
                 else if (userType == "User")
                 {
