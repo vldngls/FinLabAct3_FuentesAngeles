@@ -28,15 +28,19 @@ namespace FinLabAct3_FuentesAngeles
                 // Authentication successful
                 if (userType == "Admin")
                 {
-                    // Redirect to Admin page
+                    // Redirect to Admin Page
+                    LabAdminForm adminForm = new LabAdminForm();
+                    adminForm.Show();
+                    this.Hide();
                     MessageBox.Show("Logged in as Admin");
-                    // Add your redirection code here
                 }
                 else if (userType == "User")
                 {
                     // Redirect to User page
+                    LabUserForm userForm = new LabUserForm();
+                    userForm.Show();
+                    this.Hide();
                     MessageBox.Show("Logged in as User");
-                    // Add your redirection code here
                 }
             }
             else
