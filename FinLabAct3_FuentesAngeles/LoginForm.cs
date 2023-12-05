@@ -7,7 +7,7 @@ namespace FinLabAct3_FuentesAngeles
 {
     public partial class LoginForm : Form
     {
-        public static string loggedID, loggedFullname, loggedPassword;
+        public static string loggedID, loggedFullname, loggedPassword, loggedUserType;
 
 
         public LoginForm()
@@ -40,6 +40,7 @@ namespace FinLabAct3_FuentesAngeles
                 if (userType == "Admin")
                 {
                     // Redirect to Admin Page
+                    loggedUserType = "Admin";
                     LabAdminForm adminForm = new LabAdminForm();
                     adminForm.Show();
                     this.Hide();
@@ -48,6 +49,7 @@ namespace FinLabAct3_FuentesAngeles
                 else if (userType == "User")
                 {
                     // Redirect to User page
+                    loggedUserType = "User";
                     LabUserForm userForm = new LabUserForm();
                     userForm.Show();
                     this.Hide();

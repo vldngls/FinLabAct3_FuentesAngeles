@@ -29,6 +29,126 @@ namespace LaboratoryDLL
             }
         }
 
+        public DataTable GetEquipmentData()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("GetEquipmentData", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+        }
+        public DataTable GetEquipmentDataGraph()
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("GetEquipmentDataGraph", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        return dataTable;
+                    }
+                }
+            }
+        }
+
+        public DataTable GetTransactionsByUserType(string userType)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("GetTransactionsByUserType", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@UserType", userType);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+
+        public void DeductEquipmentQuantity(string equipmentName, int borrowQuantity)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("DeductEquipmentQuantity", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@EquipmentName", equipmentName);
+                    command.Parameters.AddWithValue("@BorrowQuantity", borrowQuantity);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void ReturnEquipment(string transactionID)
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("ReturnEquipment", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@TransactionID", transactionID);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+
+        public void InsertTransaction(
+           string transactionID,
+           string userTransact,
+           string borrowedEquipment,
+           string borrowQuantity,
+           string transactionDate,
+           string transactionReason
+       )
+        {
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                using (SqlCommand command = new SqlCommand("InsertTransaction", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.AddWithValue("@TransactionID", transactionID);
+                    command.Parameters.AddWithValue("@UserTransact", userTransact);
+                    command.Parameters.AddWithValue("@BorrowedEquipment", borrowedEquipment);
+                    command.Parameters.AddWithValue("@BorrowQuantity", borrowQuantity);
+                    command.Parameters.AddWithValue("@TransactionDate", transactionDate);
+                    command.Parameters.AddWithValue("@TransactionReason", transactionReason);
+
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
         public string AuthenticateUser(string userID, string password)
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -115,6 +235,51 @@ namespace LaboratoryDLL
                     }
                 }
             }
+        }
+
+        public DataTable GetEquipmentDataByUserType(string userType)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("GetEquipmentDataByUserType", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
+        }
+
+        public DataTable GetTransactionsByUser(string userID)
+        {
+            DataTable dataTable = new DataTable();
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("GetTransactionsByUser", connection))
+                {
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@UserID", userID);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+
+            return dataTable;
         }
 
 

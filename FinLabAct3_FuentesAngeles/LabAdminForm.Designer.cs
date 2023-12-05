@@ -40,6 +40,8 @@
             this.addEquipmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editEquipmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newTransactionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.equipmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,7 +49,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.administratorToolStripMenuItem,
-            this.laboratoryToolStripMenuItem});
+            this.laboratoryToolStripMenuItem,
+            this.dataToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1264, 24);
@@ -114,23 +117,38 @@
             // addEquipmentToolStripMenuItem
             // 
             this.addEquipmentToolStripMenuItem.Name = "addEquipmentToolStripMenuItem";
-            this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.addEquipmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addEquipmentToolStripMenuItem.Text = "Equipments";
             this.addEquipmentToolStripMenuItem.Click += new System.EventHandler(this.addEquipmentToolStripMenuItem_Click);
             // 
             // editEquipmentToolStripMenuItem
             // 
             this.editEquipmentToolStripMenuItem.Name = "editEquipmentToolStripMenuItem";
-            this.editEquipmentToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.editEquipmentToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editEquipmentToolStripMenuItem.Text = "Transactions";
             this.editEquipmentToolStripMenuItem.Click += new System.EventHandler(this.editEquipmentToolStripMenuItem_Click);
             // 
             // newTransactionToolStripMenuItem
             // 
             this.newTransactionToolStripMenuItem.Name = "newTransactionToolStripMenuItem";
-            this.newTransactionToolStripMenuItem.Size = new System.Drawing.Size(161, 22);
+            this.newTransactionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newTransactionToolStripMenuItem.Text = "New Transaction";
             this.newTransactionToolStripMenuItem.Click += new System.EventHandler(this.newTransactionToolStripMenuItem_Click);
+            // 
+            // dataToolStripMenuItem
+            // 
+            this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.equipmentsToolStripMenuItem});
+            this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(43, 20);
+            this.dataToolStripMenuItem.Text = "Data";
+            // 
+            // equipmentsToolStripMenuItem
+            // 
+            this.equipmentsToolStripMenuItem.Name = "equipmentsToolStripMenuItem";
+            this.equipmentsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.equipmentsToolStripMenuItem.Text = "Equipments";
+            this.equipmentsToolStripMenuItem.Click += new System.EventHandler(this.equipmentsToolStripMenuItem_Click);
             // 
             // LabAdminForm
             // 
@@ -166,5 +184,7 @@
         private System.Windows.Forms.ToolStripMenuItem editEquipmentToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem accountsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem newTransactionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem equipmentsToolStripMenuItem;
     }
 }

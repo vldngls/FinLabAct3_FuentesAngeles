@@ -51,6 +51,7 @@
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -85,6 +86,12 @@
     <Compile Include="BorrowReturnModule.Designer.cs">
       <DependentUpon>BorrowReturnModule.cs</DependentUpon>
     </Compile>
+    <Compile Include="EquipmentsData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EquipmentsData.Designer.cs">
+      <DependentUpon>EquipmentsData.cs</DependentUpon>
+    </Compile>
     <Compile Include="LabAdminForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +117,21 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>LaboratoryDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LaboratoryDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDBDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LaboratoryDBDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDBDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LaboratoryDBDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LaboratoryDBDataSet6.xsd</DependentUpon>
     </Compile>
     <Compile Include="LabUserForm.cs">
       <SubType>Form</SubType>
@@ -160,6 +182,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="BorrowReturnModule.resx">
       <DependentUpon>BorrowReturnModule.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EquipmentsData.resx">
+      <DependentUpon>EquipmentsData.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LabAdminForm.resx">
       <DependentUpon>LabAdminForm.cs</DependentUpon>
@@ -235,6 +260,39 @@
     </None>
     <None Include="LaboratoryDBDataSet3.xss">
       <DependentUpon>LaboratoryDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet4.xsc">
+      <DependentUpon>LaboratoryDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDBDataSet4.xss">
+      <DependentUpon>LaboratoryDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet5.xsc">
+      <DependentUpon>LaboratoryDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDBDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDBDataSet5.xss">
+      <DependentUpon>LaboratoryDBDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet6.xsc">
+      <DependentUpon>LaboratoryDBDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="LaboratoryDBDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LaboratoryDBDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LaboratoryDBDataSet6.xss">
+      <DependentUpon>LaboratoryDBDataSet6.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -65,5 +65,11 @@ namespace FinLabAct3_FuentesAngeles
             PasswordRecovery passwordRecoveryForm = new PasswordRecovery();
             passwordRecoveryForm.ShowDialog();
         }
+
+        private void equipmentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EquipmentsData equipmentsData = new EquipmentsData();
+            equipmentsData.Show();
+        }
     }
 }

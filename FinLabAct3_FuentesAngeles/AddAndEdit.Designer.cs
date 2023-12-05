@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnEdit = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -39,8 +40,16 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSaveEquipment = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.laboratoryDBDataSet4 = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet4();
+            this.equipmentDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.equipmentDBTableAdapter = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet4TableAdapters.EquipmentDBTableAdapter();
+            this.equipmentNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.equipmentDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentDBBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEdit
@@ -85,7 +94,14 @@
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.equipmentNameDataGridViewTextBoxColumn,
+            this.equipmentQuantityDataGridViewTextBoxColumn,
+            this.equipmentDescriptionDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.equipmentDBBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(19, 139);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(439, 443);
@@ -166,6 +182,38 @@
             this.groupBox1.Text = "Equipment Details";
             this.groupBox1.UseWaitCursor = true;
             // 
+            // laboratoryDBDataSet4
+            // 
+            this.laboratoryDBDataSet4.DataSetName = "LaboratoryDBDataSet4";
+            this.laboratoryDBDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // equipmentDBBindingSource
+            // 
+            this.equipmentDBBindingSource.DataMember = "EquipmentDB";
+            this.equipmentDBBindingSource.DataSource = this.laboratoryDBDataSet4;
+            // 
+            // equipmentDBTableAdapter
+            // 
+            this.equipmentDBTableAdapter.ClearBeforeFill = true;
+            // 
+            // equipmentNameDataGridViewTextBoxColumn
+            // 
+            this.equipmentNameDataGridViewTextBoxColumn.DataPropertyName = "EquipmentName";
+            this.equipmentNameDataGridViewTextBoxColumn.HeaderText = "EquipmentName";
+            this.equipmentNameDataGridViewTextBoxColumn.Name = "equipmentNameDataGridViewTextBoxColumn";
+            // 
+            // equipmentQuantityDataGridViewTextBoxColumn
+            // 
+            this.equipmentQuantityDataGridViewTextBoxColumn.DataPropertyName = "EquipmentQuantity";
+            this.equipmentQuantityDataGridViewTextBoxColumn.HeaderText = "EquipmentQuantity";
+            this.equipmentQuantityDataGridViewTextBoxColumn.Name = "equipmentQuantityDataGridViewTextBoxColumn";
+            // 
+            // equipmentDescriptionDataGridViewTextBoxColumn
+            // 
+            this.equipmentDescriptionDataGridViewTextBoxColumn.DataPropertyName = "EquipmentDescription";
+            this.equipmentDescriptionDataGridViewTextBoxColumn.HeaderText = "EquipmentDescription";
+            this.equipmentDescriptionDataGridViewTextBoxColumn.Name = "equipmentDescriptionDataGridViewTextBoxColumn";
+            // 
             // AddAndEdit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,9 +225,12 @@
             this.Name = "AddAndEdit";
             this.Padding = new System.Windows.Forms.Padding(16);
             this.Text = "Equipments";
+            this.Load += new System.EventHandler(this.AddAndEdit_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.equipmentDBBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -197,5 +248,11 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnSaveEquipment;
         private System.Windows.Forms.GroupBox groupBox1;
+        private FinLabAct3_FuentesAngeles.LaboratoryDBDataSet4 laboratoryDBDataSet4;
+        private System.Windows.Forms.BindingSource equipmentDBBindingSource;
+        private FinLabAct3_FuentesAngeles.LaboratoryDBDataSet4TableAdapters.EquipmentDBTableAdapter equipmentDBTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentQuantityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn equipmentDescriptionDataGridViewTextBoxColumn;
     }
 }
