@@ -54,6 +54,13 @@
             this.equipmentDBBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.laboratoryDBDataSet1 = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet1();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.transactionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userTransactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrowedEquipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrowQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.transactionDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.laboratoryDBDataSet3 = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet3();
             this.btnReturn = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
@@ -61,14 +68,7 @@
             this.equipmentDBTableAdapter = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSetTableAdapters.EquipmentDBTableAdapter();
             this.equipmentDBTableAdapter1 = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet1TableAdapters.EquipmentDBTableAdapter();
             this.equipmentDBTableAdapter2 = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet2TableAdapters.EquipmentDBTableAdapter();
-            this.laboratoryDBDataSet3 = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet3();
-            this.transactionDBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.transactionDBTableAdapter = new FinLabAct3_FuentesAngeles.LaboratoryDBDataSet3TableAdapters.TransactionDBTableAdapter();
-            this.transactionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userTransactDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowedEquipmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.borrowQuantityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.transactionDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -81,9 +81,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDBBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionDBBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet3)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // cmbEquipment
@@ -96,6 +96,7 @@
             this.cmbEquipment.Name = "cmbEquipment";
             this.cmbEquipment.Size = new System.Drawing.Size(219, 23);
             this.cmbEquipment.TabIndex = 0;
+            this.cmbEquipment.SelectedIndexChanged += new System.EventHandler(this.cmbEquipment_SelectedIndexChanged);
             // 
             // equipmentDBBindingSource
             // 
@@ -115,6 +116,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(233, 23);
             this.dateTimePicker1.TabIndex = 1;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // groupBox1
             // 
@@ -211,6 +213,7 @@
             this.txtReason.Name = "txtReason";
             this.txtReason.Size = new System.Drawing.Size(202, 23);
             this.txtReason.TabIndex = 2;
+
             // 
             // label4
             // 
@@ -331,6 +334,46 @@
             this.dataGridView2.Size = new System.Drawing.Size(547, 272);
             this.dataGridView2.TabIndex = 18;
             // 
+            // transactionIDDataGridViewTextBoxColumn
+            // 
+            this.transactionIDDataGridViewTextBoxColumn.DataPropertyName = "TransactionID";
+            this.transactionIDDataGridViewTextBoxColumn.HeaderText = "TransactionID";
+            this.transactionIDDataGridViewTextBoxColumn.Name = "transactionIDDataGridViewTextBoxColumn";
+            // 
+            // userTransactDataGridViewTextBoxColumn
+            // 
+            this.userTransactDataGridViewTextBoxColumn.DataPropertyName = "UserTransact";
+            this.userTransactDataGridViewTextBoxColumn.HeaderText = "UserTransact";
+            this.userTransactDataGridViewTextBoxColumn.Name = "userTransactDataGridViewTextBoxColumn";
+            // 
+            // borrowedEquipmentDataGridViewTextBoxColumn
+            // 
+            this.borrowedEquipmentDataGridViewTextBoxColumn.DataPropertyName = "BorrowedEquipment";
+            this.borrowedEquipmentDataGridViewTextBoxColumn.HeaderText = "BorrowedEquipment";
+            this.borrowedEquipmentDataGridViewTextBoxColumn.Name = "borrowedEquipmentDataGridViewTextBoxColumn";
+            // 
+            // borrowQuantityDataGridViewTextBoxColumn
+            // 
+            this.borrowQuantityDataGridViewTextBoxColumn.DataPropertyName = "BorrowQuantity";
+            this.borrowQuantityDataGridViewTextBoxColumn.HeaderText = "BorrowQuantity";
+            this.borrowQuantityDataGridViewTextBoxColumn.Name = "borrowQuantityDataGridViewTextBoxColumn";
+            // 
+            // transactionDateDataGridViewTextBoxColumn
+            // 
+            this.transactionDateDataGridViewTextBoxColumn.DataPropertyName = "TransactionDate";
+            this.transactionDateDataGridViewTextBoxColumn.HeaderText = "TransactionDate";
+            this.transactionDateDataGridViewTextBoxColumn.Name = "transactionDateDataGridViewTextBoxColumn";
+            // 
+            // transactionDBBindingSource
+            // 
+            this.transactionDBBindingSource.DataMember = "TransactionDB";
+            this.transactionDBBindingSource.DataSource = this.laboratoryDBDataSet3;
+            // 
+            // laboratoryDBDataSet3
+            // 
+            this.laboratoryDBDataSet3.DataSetName = "LaboratoryDBDataSet3";
+            this.laboratoryDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnReturn
             // 
             this.btnReturn.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -390,49 +433,9 @@
             // 
             this.equipmentDBTableAdapter2.ClearBeforeFill = true;
             // 
-            // laboratoryDBDataSet3
-            // 
-            this.laboratoryDBDataSet3.DataSetName = "LaboratoryDBDataSet3";
-            this.laboratoryDBDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // transactionDBBindingSource
-            // 
-            this.transactionDBBindingSource.DataMember = "TransactionDB";
-            this.transactionDBBindingSource.DataSource = this.laboratoryDBDataSet3;
-            // 
             // transactionDBTableAdapter
             // 
             this.transactionDBTableAdapter.ClearBeforeFill = true;
-            // 
-            // transactionIDDataGridViewTextBoxColumn
-            // 
-            this.transactionIDDataGridViewTextBoxColumn.DataPropertyName = "TransactionID";
-            this.transactionIDDataGridViewTextBoxColumn.HeaderText = "TransactionID";
-            this.transactionIDDataGridViewTextBoxColumn.Name = "transactionIDDataGridViewTextBoxColumn";
-            // 
-            // userTransactDataGridViewTextBoxColumn
-            // 
-            this.userTransactDataGridViewTextBoxColumn.DataPropertyName = "UserTransact";
-            this.userTransactDataGridViewTextBoxColumn.HeaderText = "UserTransact";
-            this.userTransactDataGridViewTextBoxColumn.Name = "userTransactDataGridViewTextBoxColumn";
-            // 
-            // borrowedEquipmentDataGridViewTextBoxColumn
-            // 
-            this.borrowedEquipmentDataGridViewTextBoxColumn.DataPropertyName = "BorrowedEquipment";
-            this.borrowedEquipmentDataGridViewTextBoxColumn.HeaderText = "BorrowedEquipment";
-            this.borrowedEquipmentDataGridViewTextBoxColumn.Name = "borrowedEquipmentDataGridViewTextBoxColumn";
-            // 
-            // borrowQuantityDataGridViewTextBoxColumn
-            // 
-            this.borrowQuantityDataGridViewTextBoxColumn.DataPropertyName = "BorrowQuantity";
-            this.borrowQuantityDataGridViewTextBoxColumn.HeaderText = "BorrowQuantity";
-            this.borrowQuantityDataGridViewTextBoxColumn.Name = "borrowQuantityDataGridViewTextBoxColumn";
-            // 
-            // transactionDateDataGridViewTextBoxColumn
-            // 
-            this.transactionDateDataGridViewTextBoxColumn.DataPropertyName = "TransactionDate";
-            this.transactionDateDataGridViewTextBoxColumn.HeaderText = "TransactionDate";
-            this.transactionDateDataGridViewTextBoxColumn.Name = "transactionDateDataGridViewTextBoxColumn";
             // 
             // BorrowReturnModule
             // 
@@ -451,7 +454,7 @@
             this.Name = "BorrowReturnModule";
             this.Padding = new System.Windows.Forms.Padding(19, 18, 19, 18);
             this.Text = "BorrowReturnForm";
-            this.Load += new System.EventHandler(this.BorrowReturnModule_Load);
+
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDBBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
@@ -467,10 +470,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.equipmentDBBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.transactionDBBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet3)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.laboratoryDBDataSet3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.transactionDBBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
